@@ -5,10 +5,10 @@ services:
     container_name: rbac-redis
     environment:
       - ALLOW_EMPTY_PASSWORD=no
-      - REDIS_PASSWORD=Mile123_A
+      - REDIS_PASSWORD=${REDIS_PASSWORD:?missing in .env}
       - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
     ports:
-      - '6379:6379'
+      - '127.0.0.1:6379:6379'
     volumes:
       - redis_data:/bitnami/redis/data
     restart: unless-stopped

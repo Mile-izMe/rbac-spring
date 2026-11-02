@@ -96,8 +96,8 @@ class UserControllerTest {
                 .andExpect(jsonPath("$.message").value("Password must not exceed 72 bytes"));
 
         postUser(createJson("noroleid", "noroleid@example.com", "[999999999]"))
-                .andExpect(status().isNotFound())
-                .andExpect(jsonPath("$.errorCode").value("ROL-001"));
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.errorCode").value("ROL-005"));
     }
 
     @Test

@@ -114,7 +114,7 @@ public class UserService {
 
         List<Role> roles = roleRepository.findAllById(roleIds);
         if (roles.size() != roleIds.size()) {
-            throw new RbacException(ErrorCode.ROLE_NOT_FOUND);
+            throw new RbacException(ErrorCode.ROLE_REFERENCE_NOT_FOUND);
         }
         return new HashSet<>(roles);
     }

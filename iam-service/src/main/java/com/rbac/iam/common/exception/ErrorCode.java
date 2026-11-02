@@ -34,6 +34,7 @@ public enum ErrorCode {
     ROLE_CODE_ALREADY_EXISTS(HttpStatus.CONFLICT, "ROL-002", "Role code already existed in system"),
     SYSTEM_ROLE_IMMUTABLE(HttpStatus.CONFLICT, "ROL-003", "System role cannot be modified or deleted"),
     ROLE_IN_USE(HttpStatus.CONFLICT, "ROL-004", "Role is still assigned to users"),
+    ROLE_REFERENCE_NOT_FOUND(HttpStatus.BAD_REQUEST, "ROL-005", "One or more roleIds do not exist"),
 
     // --- Resource errors
     RESOURCE_NOT_FOUND(HttpStatus.NOT_FOUND, "RES-001", "Resource not found in system"),
