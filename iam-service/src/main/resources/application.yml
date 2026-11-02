@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: iam-service
+  config:
+    import: optional:file:.env[.properties] # đọc DB_PASSWORD từ file .env ở thư mục chạy app
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521/FREEPDB1
+    username: iam
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate # schema do Flyway quản lý, Hibernate chỉ kiểm tra
+    open-in-view: false
